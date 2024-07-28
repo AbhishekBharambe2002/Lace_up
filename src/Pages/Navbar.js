@@ -78,7 +78,7 @@ const Navbar = () => {
           />
           <Avatar
             name="Profile"
-            src="path/to/profile-picture.jpg" // Replace with actual path
+            src="path/to/profile-picture.jpg" 
             size="sm"
             mr={4}
           />

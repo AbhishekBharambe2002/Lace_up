@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Text, IconButton, Image, Button } from '@chakra-ui/react';
-import {FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import shoe1 from '../images/shoe1.png';
 import shoe2 from '../images/shoe2.png';
 import shoe3 from '../images/shoe3.png';
@@ -37,34 +37,38 @@ const Homepage = () => {
   };
 
   return (
-    <Box position="relative" w="full" h="600px" background="linear-gradient(to right, rgba(229,229,229) 50%, white 50%)">
+    <Box
+      position="relative"
+      w="100%"
+      minH="100vh"
+      background="linear-gradient(to right, rgba(229,229,229) 50%, white 50%)"
+    >
       <Flex h="full" position="relative">
         <Box flex="1" display="flex" alignItems="center" justifyContent="center" pl={12}>
           <Box textAlign="left">
             <Text fontSize="5xl" mb={4} fontWeight="bold">{slides[currentSlide].heading}</Text>
-            <Text fontSize="xl" fontWeight="bold" mt={5}>{slides[currentSlide].subheading}</Text>
+            <Text fontSize="xl" fontWeight="bold" mt={24}>{slides[currentSlide].subheading}</Text>
             <Text fontSize="md" color="gray.600" mt={2}>{slides[currentSlide].description}</Text>
             <Button colorScheme="orange" variant="solid" mt={4}>EXPLORE NOW</Button>
           </Box>
         </Box>
 
-        <Box flex="1" display="flex" mb="300" alignItems="center" justifyContent="center">
+        <Box flex="1" display="flex" alignItems="center" justifyContent="center">
           <Image
             src={slides[currentSlide].image}
             alt={`Slide ${currentSlide + 1}`}
             objectFit="contain"
-            boxSize="400px"
+            boxSize="500px"  
             mx="auto"
             background="transparent"
+            mt={-20}  
           />
         </Box>
 
         <Box flex="1" display="flex" alignItems="center" justifyContent="center" pr={20}>
-          <Box textAlign="right" >
+          <Box textAlign="right">
             <Text fontSize="xl" fontWeight="bold" mt={32}>{slides[currentSlide].subheading}</Text>
             <Text fontSize="md" color="gray.600" mt={2}>{slides[currentSlide].description}</Text>
-            <Button colorScheme="orange" variant="solid" mt={4}>ADD TO BAG</Button>
-            <Text fontSize="2xl" fontWeight="bold" mt={4}>{slides[currentSlide].price}</Text>
           </Box>
         </Box>
       </Flex>
@@ -83,6 +87,39 @@ const Homepage = () => {
         color="orange"
         _hover={{ backgroundColor: 'orange.200' }}
       />
+      <Flex justifyContent="center" m={1} alignItems="center">
+        <Box display="flex" justifyContent="space-between" alignItems="center" width="400px">
+          <Box
+            border="2px solid"
+            borderColor="rgba(210,210,210)"
+            width="175px"
+            height="50px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Text fontSize="2xl" fontWeight="semi-bold" color="black">{slides[currentSlide].price}</Text>
+          </Box>
+          <Button colorScheme="orange" width="175px" height="50px" borderRadius="0px" variant="solid">ADD TO BAG</Button>
+        </Box>
+      </Flex>
+      <Text
+        position="absolute"
+        top="-10%"
+        right="0"
+        bottom="0"
+        left="50%"
+        fontSize="20vw"
+        fontWeight="bold"
+        color="gray.300"
+        opacity="0.2"
+        zIndex="1"
+        textAlign="center"
+        transformOrigin="center"
+        lineHeight="1"
+      >
+        Lace Up
+      </Text>
     </Box>
   );
 };
